@@ -80,7 +80,7 @@ def main():
             cv2.imshow('Video', frame_small)
 
             if cv2.waitKey(1) & 0xFF == ord('q'):
-            break
+                break
 
 
         # When everything is done, release the capture
