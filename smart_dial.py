@@ -6,9 +6,12 @@ import cv2
 import sys
 import time
 import thread
+<<<<<<< HEAD
 import threading
 from multiprocessing import Process
 import os
+=======
+>>>>>>> 4c7f7e36cbb322b9be2cf7705b12977fbdbe868e
 
 ser = serial.Serial('//dev//tty96B0', 9600)
 KEY = '96ac51d9ccf74f258ecfc1ae8ece5e44'
@@ -89,7 +92,6 @@ def main():
                 old_time = time.time()
                 try:
                     thread.start_new_thread(face_recognition(frame))
-                    #t = threading.Thread(target = face_recognition(frame)
                 except:
                     print "Unable to start process"
             else:
