@@ -10,7 +10,7 @@ import thread
 ser = serial.Serial('//dev//tty96B0', 9600)
 KEY1 = '96ac51d9ccf74f258ecfc1ae8ece5e44'
 KEY2 = '3a2dcc5f86fc4a8e9330c506a2573289'
-#CF.Key.set(KEY)
+CF.Key.set(KEY1)
 first = True
 
 BASE_URL = 'https://westcentralus.api.cognitive.microsoft.com/face/v1.0'
@@ -93,10 +93,7 @@ def main():
 		if len(faces) > 0 and (time.time() - old_time > 5) and not seen_face:
 			seen_face = True
 			old_time = time.time()
-			try:
-				thread.start_new_thread(face_recognition(frame))
-			except:
-				print "Unable to start thread"
+			face_recognition(frame)
 		else:
 			seen_face = False
 
