@@ -32,6 +32,7 @@ def main():
 	#compare detected face with image from original_image_path (call compare_image_paths)
 	
 	#pass serial stuff to arduino here
+	compare_image_paths("hello", "goodbye")
 	
 	
 	
