@@ -6,7 +6,6 @@ import cv2
 import sys
 import time
 import thread
-import threading
 
 ser = serial.Serial('//dev//tty96B0', 9600)
 KEY = '96ac51d9ccf74f258ecfc1ae8ece5e44'
@@ -83,11 +82,9 @@ def main():
             if len(faces) > 0 and (time.time() - old_time > 5):
                 old_time = time.time()
                 try:
-                	t = Process(target= face_recognition, args=(frame))
-                    #t = threading.Thread(target = face_recognition(frame)
-                    t.start()
+                    thread.start_new_thread(face_recognition(frame))
                 except:
-                    print "Unable to start process"
+                    print "Unable to start thread"
 
             # Display the resulting frame
             cv2.imshow('Video', frame_small)
