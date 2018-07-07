@@ -84,7 +84,7 @@ def main():
                 old_time = time.time()
                 try:
                 	t = Process(target= face_recognition, args=(frame))
-                    #t = threading.Thread(target = face_recognition(frame))
+                    #t = threading.Thread(target = face_recognition(frame)
                     t.start()
                 except:
                     print "Unable to start process"
