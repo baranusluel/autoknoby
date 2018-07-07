@@ -12,8 +12,9 @@ CF.BaseUrl.set(BASE_URL)
 def compare_image_paths(original_image_path, input_image_path):
 	img_paths = ['./test_images/ken1.jpg', 
 		'./test_images/ken2.jpg']
-
-	faces = [CF.face.detect(img) for img in img_paths]
+	
+	
+	faces = [CF.face.detect(img) for bytearray(img) in img_paths]
 
 	similarity = CF.face.verify(faces[0][0]['faceId'], faces[1][0]['faceId'])
 	
