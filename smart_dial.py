@@ -83,10 +83,11 @@ def main():
             if len(faces) > 0 and (time.time() - old_time > 5):
                 old_time = time.time()
                 try:
-                    t = threading.Thread(target = face_recognition(frame))
+                	t = Process(target= face_recognition, args=(frame))
+                    #t = threading.Thread(target = face_recognition(frame))
                     t.start()
                 except:
-                    print "Unable to start thread"
+                    print "Unable to start process"
 
             # Display the resulting frame
             cv2.imshow('Video', frame_small)
