@@ -11,19 +11,17 @@ ser = serial.Serial('//dev//tty96B0', 9600)
 KEY1 = '96ac51d9ccf74f258ecfc1ae8ece5e44'
 KEY2 = '3a2dcc5f86fc4a8e9330c506a2573289'
 CF.Key.set(KEY1)
-first = True
 
 BASE_URL = 'https://westcentralus.api.cognitive.microsoft.com/face/v1.0'
 CF.BaseUrl.set(BASE_URL)
 
-def compare_image_paths(original_image_path, input_image_path):
+def compare_image_paths(original_image_path, input_image_path, first):
 	img_paths = [original_image_path, input_image_path]
 	
 	if (first):
 		KEY = KEY1
 	else:
 		KEY = KEY2
-	first = not first
 		
 	CF.Key.set(KEY)
 
@@ -64,6 +62,7 @@ def face_recognition(frame):
 		ser.write("off")
 
 def main():
+	first = True
 	seen_face = False
 	cascade_Path = "haarcascade_frontalface_default.xml"
 	face_Cascade = cv2.CascadeClassifier(cascade_Path)
@@ -93,7 +92,8 @@ def main():
 		if len(faces) > 0 and (time.time() - old_time > 5) and not seen_face:
 			seen_face = True
 			old_time = time.time()
-			face_recognition(frame)
+			face_recognition(frame, first)
+			first = not first
 		else:
 			seen_face = False
 
