@@ -83,7 +83,7 @@ def main():
             if len(faces) > 0 and (time.time() - old_time > 5):
                 old_time = time.time()
                 try:
-                    t = threading.Thread(target = face_recognition, args = (frame_small))
+                    t = threading.Thread(target = face_recognition(frame))
                     t.start()
                 except:
                     print "Unable to start thread"
