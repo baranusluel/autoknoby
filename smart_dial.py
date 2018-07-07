@@ -18,12 +18,12 @@ def compare_image_paths(original_image_path, input_image_path):
 				'Ocp-Apim-Subscription-Key': '96ac51d9ccf74f258ecfc1ae8ece5e44'}
 	
 
-        params = {
-                'returnFaceId': 'true'
+	params = {
+			'returnFaceId': 'true'
                 }
 
 
-	path_to_face_api = '/verify'
+	path_to_face_api = '/detect'
 	
 	images = []
 	
