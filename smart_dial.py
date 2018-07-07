@@ -10,7 +10,7 @@ BASE_URL = 'https://westcentralus.api.cognitive.microsoft.com/face/v1.0'
 CF.BaseUrl.set(BASE_URL)
 
 img_urls = [
-    'https://www.biography.com/.image/t_share/MTE4MDAzNDEwNzg5ODI4MTEw/barack-obama-12782369-1-402.jpg',
+    'https://img.thedailybeast.com/image/upload/c_crop,d_placeholder_euli9k,h_1440,w_2560,x_0,y_0/dpr_2.0/c_limit,w_740/fl_lossy,q_auto/v1527786393/180531-Tani-_CNN_Blasts_Morgan_Freeman-hero_dyfqf1',
     'https://timedotcom.files.wordpress.com/2017/12/barack-obama.jpeg']
 
 faces = [CF.face.detect(img_url) for img_url in img_urls]
