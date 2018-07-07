@@ -1,12 +1,6 @@
-// Sweep
-// by BARRAGAN <http://barraganstudio.com> 
-// This example code is in the public domain.
-
-
 #include <Servo.h> 
  
-Servo myservo;  // create servo object to control a servo 
-                // a maximum of eight servo objects can be created 
+Servo myservo;
 
 int powerPin = 7;
 int servoPin = 9;
@@ -33,5 +27,5 @@ void loop()
     }
   }
   myservo.write(0);
-  delay(100);
+  delay(15);
 } 
