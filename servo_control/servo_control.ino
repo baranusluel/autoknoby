@@ -4,9 +4,9 @@
 
 rgb_lcd lcd;
 
-const int colorR = 0;
+const int colorR = 255;
 const int colorG = 0;
-const int colorB = 255;
+const int colorB = 0;
 
 Servo myservo;
 
@@ -19,7 +19,9 @@ void setup()
   //set up the LCD's number of comlumns and rows
   lcd.begin(16, 2);
 
-  lcd.setRGB(colorR, colorG, colorB);
+  lcd.setRGB(0, 0, 255);
+  
+  lcd.print("hello world");
 	
   Serial.begin(9600);
   pinMode(powerPin, OUTPUT);
@@ -34,11 +36,11 @@ void loop()
 	  if (authorized == "on") {
       digitalWrite(powerPin, LOW);
 	    Serial.println("Authorized\n");
-		  lcd.print("Authorized");
+              lcd.setRGB(0, 255, 0);
     } else if (authorized == "off") {
       digitalWrite(powerPin, HIGH);
 	    Serial.println("Not authorized\n");
-		  lcd.print("Unauthorized");
+              lcd.setRGB(255, 0, 0);
     }  
   }
   myservo.write(0);

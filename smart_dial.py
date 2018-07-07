@@ -6,12 +6,6 @@ import cv2
 import sys
 import time
 import thread
-<<<<<<< HEAD
-import threading
-from multiprocessing import Process
-import os
-=======
->>>>>>> 4c7f7e36cbb322b9be2cf7705b12977fbdbe868e
 
 ser = serial.Serial('//dev//tty96B0', 9600)
 KEY = '96ac51d9ccf74f258ecfc1ae8ece5e44'
