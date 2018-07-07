@@ -45,6 +45,7 @@ def compare_image_paths(original_image_path, input_image_path):
 	similarity = CF.face.verify(responses[0][0]['faceId'], responses[1][0]['faceId'])
 	
 	print(similarity)
+        return similarity[0]
 
  
 def main():
