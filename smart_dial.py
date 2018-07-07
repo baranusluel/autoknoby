@@ -35,8 +35,7 @@ def compare_image_paths(original_image_path, input_image_path):
 	for i in range(len(images)):
 		response = requests.post(BASE_URL + path_to_face_api, data = images[i], headers = headers)
 		print(response.json())                
-                
-                responses.append(response.json())
+		responses.append(response.json())
 			
 	
 
@@ -45,7 +44,7 @@ def compare_image_paths(original_image_path, input_image_path):
 	similarity = CF.face.verify(responses[0][0]['faceId'], responses[1][0]['faceId'])
 	
 	print(similarity)
-    return similarity[isIdentical]
+	return similarity['isIdentical']
 
  
 def main():
