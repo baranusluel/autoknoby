@@ -1,6 +1,6 @@
 import string
 import cognitive_face as CF
-import cv2 
+#import cv2 
 import requests
 
 KEY = '96ac51d9ccf74f258ecfc1ae8ece5e44'
@@ -17,7 +17,12 @@ def compare_image_paths(original_image_path, input_image_path):
 	headers = {'Content-Type': 'application/octet-stream',
 				'Ocp-Apim-Subscription-Key': '96ac51d9ccf74f258ecfc1ae8ece5e44'}
 	
-	
+
+        params = {
+                'returnFaceId': 'true'
+                }
+
+
 	path_to_face_api = '/verify'
 	
 	images = []
@@ -28,8 +33,10 @@ def compare_image_paths(original_image_path, input_image_path):
 	
 	responses = []
 	for i in range(len(images)):
-		response = requests.post(BASE_URL + path_to_face_api, data = images[i], headers = headers}
-		responses.append(response)
+		response = requests.post(BASE_URL + path_to_face_api, data = images[i], headers = headers)
+		print(response.json())                
+                
+                responses.append(response.json())
 			
 	
 
