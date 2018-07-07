@@ -1,5 +1,7 @@
 # autoknoby
 
+> Pronounced *auto-knob-ee*
+
 **Biometric security for physical controls**
 
 *A hackathon project for Qualcomm's HackMobile 2018*
