@@ -18,6 +18,6 @@ faces = [CF.face.detect(img_url) for img_url in img_urls]
 # Assume that each URL has at least one face, and that you're comparing the first face in each URL
 # If not, adjust the indices accordingly.
 similarity = CF.face.verify(faces[0][0]['faceId'], faces[1][0]['faceId'])
-print similarity
+print (similarity)
 
 
