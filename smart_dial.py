@@ -69,7 +69,7 @@ def main():
             for (x, y, w, h) in faces:
                 cv2.rectangle(frame_small, (x, y), (x+w, y+h), (0, 255, 0), 2)
 
-            if len(faces) > 0 and (time.time() - old_time > 3000):
+            if len(faces) > 0 and (time.time() - old_time > 3):
                 #compare detected face with image from original_image_path (call compare_image_paths)
                 cv2.imwrite("tmp.jpg", frame)
                 old_time = time.time()
