@@ -7,6 +7,8 @@ import sys
 import time
 import thread
 import threading
+from multiprocessing import Process
+import os
 
 ser = serial.Serial('//dev//tty96B0', 9600)
 KEY = '96ac51d9ccf74f258ecfc1ae8ece5e44'
@@ -56,9 +58,11 @@ def face_recognition(frame):
             ser.write("off")
 
 def main():
+        seen_face = False
         cascade_Path = "haarcascade_frontalface_default.xml"
         face_Cascade = cv2.CascadeClassifier(cascade_Path)
         video_capture = cv2.VideoCapture(0)
+        video_capture.set(cv2.cv.CV_CAP_PROP_FPS, 15)
         old_time = time.time()
 
 	while True:
@@ -80,14 +84,16 @@ def main():
             for (x, y, w, h) in faces:
                 cv2.rectangle(frame_small, (x, y), (x+w, y+h), (0, 255, 0), 2)
 
-            if len(faces) > 0 and (time.time() - old_time > 5):
+            if len(faces) > 0 and (time.time() - old_time > 5) and not seen_face:
+                seen_face = True
                 old_time = time.time()
                 try:
-                	t = Process(target= face_recognition, args=(frame))
+                    thread.start_new_thread(face_recognition(frame))
                     #t = threading.Thread(target = face_recognition(frame)
-                    t.start()
                 except:
                     print "Unable to start process"
+            else:
+                seen_face = False
 
             # Display the resulting frame
             cv2.imshow('Video', frame_small)
