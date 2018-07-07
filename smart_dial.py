@@ -11,8 +11,8 @@ CF.BaseUrl.set(BASE_URL)
 
 
 def compare_image_paths(original_image_path, input_image_path):
-	img_paths = ['./test_images/ken1.jpg', 
-		'./test_images/ken2.jpg']
+	img_paths = ['./test_images/baran.jpg', 
+		'./test_images/baran_input.png']
 	
 	headers = {'Content-Type': 'application/octet-stream',
 				'Ocp-Apim-Subscription-Key': '96ac51d9ccf74f258ecfc1ae8ece5e44'}
