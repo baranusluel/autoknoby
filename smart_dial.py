@@ -52,10 +52,10 @@ def compare_image_paths(original_image_path, input_image_path, first):
 	print(similarity)
 	return similarity['isIdentical']
 
-def face_recognition(frame):
+def face_recognition(frame, first):
 	#compare detected face with image from original_image_path (call compare_image_paths)
 	cv2.imwrite("tmp.jpg", frame)
-	if(compare_image_paths(original_image_path='./test_images/baran.jpg',input_image_path='./tmp.jpg')):
+	if(compare_image_paths(original_image_path='./test_images/baran.jpg',input_image_path='./tmp.jpg', first)):
 		#do serial stuff
 		ser.write("on")
 	else:
