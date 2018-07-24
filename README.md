@@ -8,4 +8,6 @@
 
 By Baran Usluel, Advaith Sethuraman, Sidharth Venkatesh, Erik Castro
 
-[Video](https://www.youtube.com/watch?v=xL6oJc1dAVI&feature=youtu.be) | [Presentation](https://github.com/baranusluel/autoknoby/blob/master/autoknoby.pdf)
+* [Demo Video](https://www.youtube.com/watch?v=xL6oJc1dAVI&feature=youtu.be)
+* [Concept Video](https://www.youtube.com/watch?v=KcPRkwxiy4U)
+* [Slideshow](https://github.com/baranusluel/autoknoby/blob/master/autoknoby.pdf)
